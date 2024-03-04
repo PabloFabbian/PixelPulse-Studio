@@ -1,0 +1,39 @@
+body {
+    overflow-x: hidden;
+}
+
+.leftNav-container {
+    display: flex;
+    align-items: center;
+}
+
+.MoreDropdown-container {
+    position: absolute;
+    left: -718%;
+    top: 96%;
+}
+
+.section-subtitle {
+    margin-left: 4.1rem;
+}
+
+.item {
+    padding-bottom: 0.5rem;
+    margin-inline: 0.5rem;
+}
+
+.title-container{
+    display: flex;
+}
+
+.item-text {
+    margin-left: 1.8rem;
+    margin-right: 1.8rem;
+}
+
+.panel-image {
+    background-image: url(public/PanelImg.webp);
+    height: 14rem;
+    width: 24rem;
+    align-self: center;
+}
