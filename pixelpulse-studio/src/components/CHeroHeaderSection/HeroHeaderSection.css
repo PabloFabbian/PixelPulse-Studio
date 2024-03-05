@@ -1,0 +1,14 @@
+.gradient-text{
+    background: linear-gradient(to right, #00fff7, #1dc539);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-container{
+    background-color: #191919;
+}
+
+.text-shadow {
+    text-shadow: 0 0 20px rgba(86, 111, 255, 0.3);
+}

@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { Disclosure } from '@headlessui/react';
-import { ArrowRightIcon } from '@heroicons/react/20/solid';
+import { MapIcon } from '@heroicons/react/20/solid'
+import './HeroHeaderSection.css';
 
 const HeroHeaderSection = () => {
     const videoSources = [
@@ -29,28 +29,17 @@ const HeroHeaderSection = () => {
     }, [currentVideoIndex]);
 
     return (
-        <div className="bg-black h-screen flex">
-            <div className="flex-1 flex items-center justify-center text-white ml-16 -mr-10">
+        <div className="hero-container h-screen flex">
+            <div className="flex-1 flex items-center justify-center text-white -mt-10 ml-16 -mr-10">
                 <div>
-                    <h1 className="text-4xl text-pretty sm:text-5xl lg:text-6xl font-bold mb-6 text-wrap">Unleash Your Creativity with PixelPulse Studio</h1>
-                    <p className="text-lg text-pretty sm:text-xl lg:text-2xl mb-8 mr-28">We are a modern and innovative design studio, specializing in creating visually stunning graphics that captivate and engage your audience.</p>
-                    <Disclosure>
-                        {({ open }) => (
-                            <>
-                            <Disclosure.Button className="flex items-center justify-center bg-transparent border-2 border-white rounded-full px-6 py-3 transition duration-300 hover:bg-white hover:text-black">
-                                Get Started
-                                <ArrowRightIcon
-                                className={`${
-                                    open ? 'transform rotate-90' : ''
-                                } w-6 h-6 ml-2`}
-                                />
-                            </Disclosure.Button>
-                            <Disclosure.Panel className="mt-4">
-                                {/* Your form or other call to action content goes here */}
-                            </Disclosure.Panel>
-                            </>
-                        )}
-                    </Disclosure>
+                    <h1 className="text-4xl text-pretty sm:text-5xl lg:text-6xl font-bold mb-6 text-wrap">Unleash Your Creativity with&nbsp;
+                        <span className='gradient-text text-shadow'>PixelPulse Studio</span>
+                    </h1>
+                    <p className="text-lg text-pretty sm:text-xl lg:text-2xl mb-8 mr-28">We are a <span className='gradient-text'>modern</span> and <span className='gradient-text'>innovative</span> design studio, specializing in creating visually stunning graphics that captivate and <span className='gradient-text'>engage</span> your audience.</p>
+                    <button className="flex items-center justify-center bg-transparent border-2 border-white rounded-full px-6 py-3 transition duration-300 hover:bg-white hover:text-black">
+                        Explore
+                        <MapIcon className="ml-3 -mr-1 w-6 h-6" />
+                    </button>
                 </div>
             </div>
             {/* Sección de video a la derecha */}
