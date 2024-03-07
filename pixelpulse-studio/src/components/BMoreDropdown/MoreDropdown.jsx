@@ -2,8 +2,7 @@ import React from 'react';
 
 function MoreDropdown() {
     const items = [
-        {
-            title: 'Our work',
+        { title: 'Our work',
             itemList: [
                 { text: 'See our latest design projects and client testimonials', link: '#', imageSrc: './public/Bullet.webp', imageAlt: 'Graphic Design' },
                 { text: 'Explore our website design services and success stories', link: '#', imageSrc: './public/Bullet.webp', imageAlt: 'Web Design' },
@@ -11,8 +10,7 @@ function MoreDropdown() {
                 { text: 'Discover our creative print design solutions', link: '#', imageSrc: './public/Bullet.webp', imageAlt: 'Print Design' }
             ]
         },
-        {
-            title: 'Testimonials',
+        { title: 'Testimonials',
             itemList: [
                 { text: 'Their experience working with us', link: '#', imageSrc: './public/Bullet2.webp', imageAlt: 'BrightSky Technologies' },
                 { text: 'How we helped them achieve their goals', link: '#', imageSrc: './public/Bullet2.webp', imageAlt: 'Infinite Designs Co.' },
@@ -20,8 +18,7 @@ function MoreDropdown() {
                 { text: 'The impact of our design on their business', link: '#', imageSrc: './public/Bullet2.webp', imageAlt: 'Artisan Studios Inc.' }
             ]
         },
-        {
-            title: 'Contact Us',
+        { title: 'Contact Us',
             itemList: [
                 { text: "We'd love to hear about your design project", link: '#', imageSrc: './public/Bullet3.webp', imageAlt: 'Get in touch' },
                 { text: 'Let us provide you with a personalized quote', link: '#', imageSrc: './public/Bullet3.webp', imageAlt: 'Request a Quote' },
@@ -32,17 +29,17 @@ function MoreDropdown() {
     ];
 
     return (
-        <div className="grid grid-cols-4 w-full justify-between border-b border-gray-200 p-4 dark:border-gray-600 dark:bg-gray-700 -ml-5">
+        <div className="grid grid-cols-4 w-full justify-between bg-slate-800 border-b border-slate-800 p-6 dark:border-slate-800 dark:bg-gray-700 px-16">
             {items.map((section, index) => (
-                <div className="item-container space-y-4 space-x-10 sm:mb-4 md:mb-0" key={index}>
+                <div className="item-container space-y-6 space-x-9 sm:mb-4 md:mb-0" key={index}>
                     <h2 className='section-subtitle'>{section.title}</h2>
                     {section.itemList.map((item, itemIndex) => (
                         <ul className='item' key={itemIndex}>
                             <div className='title-container'>
                                 <img src={item.imageSrc} className='mr-3 h-4 w-4' alt={item.imageAlt}></img>
-                                <a href={item.link} className="hover:underline hover:text-blue-600 dark:hover:text-blue-500">{item.imageAlt}</a>
+                                <a href={item.link} className="hover:underline hover:text-blue-600 dark:hover:text-blue-500 hover:no-underline hover:text-cyan-500">{item.imageAlt}</a>
                             </div>
-                            <li className='item-text'>{item.text}</li>
+                            <li className='item-text text-slate-400 max-w-xs whitespace-normal text-pretty'>{item.text}</li>
                         </ul>
                     ))}
                 </div>

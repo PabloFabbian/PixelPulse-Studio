@@ -1,14 +1,28 @@
-.gradient-text{
-    background: linear-gradient(to right, #00fff7, #1dc539);
-    -webkit-background-clip: text;
-    background-clip: text;
+.gradient-text {
     color: transparent;
+    background-image: linear-gradient(to right, #00fff7, #1dc539);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: movingGradient 3s linear infinite;
 }
 
-.hero-container{
+.hero-container {
     background-color: #191919;
 }
 
 .text-shadow {
     text-shadow: 0 0 20px rgba(86, 111, 255, 0.3);
+}
+
+@keyframes movingGradient {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
 }

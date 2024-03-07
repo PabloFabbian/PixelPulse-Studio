@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { MapIcon } from '@heroicons/react/20/solid'
+import { LinkIcon } from '@heroicons/react/20/solid'
 import './HeroHeaderSection.css';
 
 const HeroHeaderSection = () => {
@@ -29,17 +29,22 @@ const HeroHeaderSection = () => {
     }, [currentVideoIndex]);
 
     return (
-        <div className="hero-container h-screen flex">
+        <div className="hero-container h-screen flex mb-0">
             <div className="flex-1 flex items-center justify-center text-white -mt-10 ml-16 -mr-10">
                 <div>
                     <h1 className="text-4xl text-pretty sm:text-5xl lg:text-6xl font-bold mb-6 text-wrap">Unleash Your Creativity with&nbsp;
-                        <span className='gradient-text text-shadow'>PixelPulse Studio</span>
+                        <span className='gradient-text text-shadow moving-gradient'>PixelPulse Studio</span>
                     </h1>
                     <p className="text-lg text-pretty sm:text-xl lg:text-2xl mb-8 mr-28">We are a <span className='gradient-text'>modern</span> and <span className='gradient-text'>innovative</span> design studio, specializing in creating visually stunning graphics that captivate and <span className='gradient-text'>engage</span> your audience.</p>
-                    <button className="flex items-center justify-center bg-transparent border-2 border-white rounded-full px-6 py-3 transition duration-300 hover:bg-white hover:text-black">
-                        Explore
-                        <MapIcon className="ml-3 -mr-1 w-6 h-6" />
-                    </button>
+                    <div className='flex'>
+                        <button className="mr-5 flex items-center justify-center bg-transparent border-2 border-white rounded-lg px-6 py-3 transition duration-300 hover:bg-white hover:text-black">
+                            Explore
+                        </button>
+                        <button className="flex items-center justify-center bg-transparent border-2 border-white rounded-lg px-6 py-3 transition duration-300 hover:bg-white hover:text-black">
+                            Learn More
+                            <LinkIcon className="ml-3 -mr-1 w-6 h-6 focus:text-cyan-400" />
+                        </button>
+                    </div>
                 </div>
             </div>
             {/* Sección de video a la derecha */}
