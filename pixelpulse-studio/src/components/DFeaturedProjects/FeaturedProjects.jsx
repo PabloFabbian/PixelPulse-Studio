@@ -13,32 +13,45 @@ const projects = [
 ];
 
 const Projects = () => {
+    // Organizar los proyectos para que coincidan con el diseño deseado
+    const groupedProjects = [
+        [projects[0], projects[3]],
+        [projects[1], projects[4]],
+        [projects[2], projects[5]],
+    ];
+
     return (
         <div className="text-center pt-20 text-white bg-slate-800 pb-8">
             <div className="text-xl mb-6">Projects</div>
             <h1 className="text-6xl font-bold mb-6">Discover Amazing Design Projects</h1>
             <div className="text-xl mb-20">Explore our curated collection of outstanding graphic design projects.</div>
             <div className="container mx-auto pb-16">
-                <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3 gap-10">
-                    {projects.map((project) => (
-                        <div key={project.id} className="text-left mb-4">
-                            <img src={project.image} alt={project.title} className="w-full mb-4 align-center mx-auto" />
-                            <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
-                            <p className="mb-3">{project.description}</p>
-                            <div className="flex flex-wrap gap-2 mb-3">
-                                {project.type.split(' - ').map((type, index) => (
-                                    <Badge color="indigo" key={index}>{type}</Badge>
-                                ))}
-                            </div>
-                            <a href={project.link} className="flex items-center text-sm text-emerald-500 hover:text-emerald-600">
-                                View project
-                                <ChevronRightIcon className=" ml-1 w-4 h-4 focus:text-cyan-400" />
-                            </a>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-20">
+                    {/* Mapear cada grupo de proyectos */}
+                    {groupedProjects.map((group, index) => (
+                        <div key={index} className="md:col-span-1">
+                            {/* Mapear cada proyecto en el grupo */}
+                            {group.map(project => (
+                                <div key={project.id} className="text-left mb-20">
+                                    <img src={project.image} alt={project.title} className="w-full mb-4 align-center mx-auto" />
+                                    <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
+                                    <p className="mb-3">{project.description}</p>
+                                    <div className="flex flex-wrap gap-2 mb-3">
+                                        {project.type.split(' - ').map((type, index) => (
+                                            <Badge color="indigo" key={index}>{type}</Badge>
+                                        ))}
+                                    </div>
+                                    <a href={project.link} className="flex items-center text-sm text-emerald-500 hover:text-emerald-600">
+                                        View project
+                                        <ChevronRightIcon className="ml-1 w-4 h-4 focus:text-cyan-400" />
+                                    </a>
+                                </div>
+                            ))}
                         </div>
                     ))}
                 </div>
             </div>
-            <Button gradientDuoTone="greenToBlue" className='mx-auto mb-16'>View All</Button>
+            <Button gradientDuoTone="greenToBlue" className='mx-auto -mt-16 mb-20'>View All</Button>
         </div>
     );
 };

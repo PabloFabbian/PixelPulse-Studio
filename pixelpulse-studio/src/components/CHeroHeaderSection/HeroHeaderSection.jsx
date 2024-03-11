@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { LinkIcon } from '@heroicons/react/20/solid'
+import { LinkIcon } from '@heroicons/react/20/solid';
 import './HeroHeaderSection.css';
 
 const HeroHeaderSection = () => {
@@ -12,21 +12,33 @@ const HeroHeaderSection = () => {
 
     const videoRef = useRef(null);
     const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+    const [videoOpacity, setVideoOpacity] = useState(1);
 
     useEffect(() => {
         const video = videoRef.current;
 
         const playNextVideo = () => {
             const nextIndex = (currentVideoIndex + 1) % videoSources.length;
-            setCurrentVideoIndex(nextIndex);
-        };
+            setVideoOpacity(0);
+        
+            setTimeout(() => {
+                setCurrentVideoIndex(nextIndex);
+                setVideoOpacity(1); // Hacer que el siguiente video aparezca gradualmente
+                videoRef.current.play(); // Comenzar a reproducir el siguiente video
+            }, 1000); // Ajusta la duración según tus preferencias
+        };        
 
-        video.addEventListener('ended', playNextVideo);
+        const intervalId = setInterval(playNextVideo, 8000);
+
+        if (video) {
+            video.src = videoSources[currentVideoIndex];
+            video.play();
+        }
 
         return () => {
-            video.removeEventListener('ended', playNextVideo);
+            clearInterval(intervalId);
         };
-    }, [currentVideoIndex]);
+    }, [currentVideoIndex, videoSources]);
 
     return (
         <div className="hero-container h-screen flex mb-0">
@@ -51,13 +63,12 @@ const HeroHeaderSection = () => {
             <div className='flex-1 relative'>
                 <video
                     ref={videoRef}
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
                     loop
                     muted
                     autoPlay
-                >
-                    <source src={videoSources[currentVideoIndex]} type="video/mp4" />
-                </video>
+                    style={{ opacity: videoOpacity }}
+                />
             </div>
         </div>
     );
