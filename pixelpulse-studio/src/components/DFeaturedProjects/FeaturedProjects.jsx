@@ -1,7 +1,6 @@
 import React from 'react';
 import { Badge, Button } from 'flowbite-react';
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
-import './FeatureProjects.css';
 
 const projects = [
     { id: 1, title: 'Minimalist Brand Identity', image: '/project1.jpg', description: 'Elegant and sleek brand identity design for a minimalist lifestyle brand. Clean lines and subtle colors.', type: 'Branding - Logo - Identity', link: '#' },

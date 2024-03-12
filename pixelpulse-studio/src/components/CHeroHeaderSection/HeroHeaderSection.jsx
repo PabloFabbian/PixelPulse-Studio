@@ -3,42 +3,33 @@ import { LinkIcon } from '@heroicons/react/20/solid';
 import './HeroHeaderSection.css';
 
 const HeroHeaderSection = () => {
-    const videoSources = [
-        "/public/Sketches.mp4",
-        "/public/Studio.mp4",
-        "/public/GraphicTab.mp4",
-        "/public/HomeOffice.mp4"
-    ];
-
     const videoRef = useRef(null);
-    const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
     const [videoOpacity, setVideoOpacity] = useState(1);
 
     useEffect(() => {
         const video = videoRef.current;
 
-        const playNextVideo = () => {
-            const nextIndex = (currentVideoIndex + 1) % videoSources.length;
-            setVideoOpacity(0);
-        
-            setTimeout(() => {
-                setCurrentVideoIndex(nextIndex);
-                setVideoOpacity(1); // Hacer que el siguiente video aparezca gradualmente
-                videoRef.current.play(); // Comenzar a reproducir el siguiente video
-            }, 1000); // Ajusta la duración según tus preferencias
-        };        
+        const fadeInVideo = () => {
+            setVideoOpacity(1); // Hacer que el video aparezca gradualmente
+        };
 
-        const intervalId = setInterval(playNextVideo, 8000);
+        const playVideo = () => {
+            video.src = "/public/Videos.mp4";
+            video.load(); // Cargar el video
+            video.play(); // Reproducir el video
+            setTimeout(fadeInVideo, 1000); // Retrasar la transición de fundido para garantizar que el video se esté reproduciendo
+        };
 
         if (video) {
-            video.src = videoSources[currentVideoIndex];
-            video.play();
+            playVideo();
         }
 
         return () => {
-            clearInterval(intervalId);
+            if (video) {
+                video.pause(); // Pausar el video al desmontar el componente
+            }
         };
-    }, [currentVideoIndex, videoSources]);
+    }, []);
 
     return (
         <div className="hero-container h-screen flex mb-0">
