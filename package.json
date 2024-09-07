@@ -13,8 +13,10 @@
     "@headlessui/react": "^1.7.18",
     "@heroicons/react": "^2.1.1",
     "flowbite-react": "^0.7.2",
+    "framer-motion": "^11.5.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-intersection-observer": "^9.13.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",

@@ -9,8 +9,8 @@ body {
 
 .MoreDropdown-container {
     position: absolute;
-    left: -718%;
-    top: 96%;
+    left: -1115%;
+    top: 105%;
 }
 
 .section-subtitle {
@@ -36,4 +36,8 @@ body {
     height: 14rem;
     width: 24rem;
     align-self: center;
+}
+
+.navbar {
+    background-color: rgba(31, 41, 55, 0.8)
 }

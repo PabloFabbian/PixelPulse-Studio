@@ -1,16 +1,19 @@
-import NavBar from "./components/ANavbar/NavBar"
-import HeroHeaderSection from "./components/CHeroHeaderSection/HeroHeaderSection"
-import Projects from "./components/DFeaturedProjects/FeaturedProjects"
-import GraphicDesignServices from "./components/EGraphicDesignServices/GraphicDesignServices"
+import NavBar from "./components/Navbar/NavBar"
+import HeroSection from "./components/HeroSection/HeroSection"
+import AboutUs from "./components/AboutUs/AboutUs"
+import Projects from "./components/OurProjects/OurProjects"
+import ServicesCards from "./components/ServicesCards/ServicesCards"
+import Footer from "./components/Footer/Footer"
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-[#111827]">
       <NavBar></NavBar>
-      <HeroHeaderSection></HeroHeaderSection>
+      <HeroSection></HeroSection>
       <Projects></Projects>
-      <GraphicDesignServices></GraphicDesignServices>
-      <h1 className="text-blue-500 text-4xl font-bold text-center mt-16">Hola mundo</h1>
+      <AboutUs></AboutUs>
+      <ServicesCards></ServicesCards>
+      <Footer></Footer>
     </div>
   )
 }

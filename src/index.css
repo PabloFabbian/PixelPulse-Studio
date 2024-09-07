@@ -2,18 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+    scroll-behavior: smooth;
+}
+
 *{  padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
 body{
-    background-color: #2b5353;
+    background-color: #111827;
 }
 
 /* Para navegadores Webkit (Chrome, Safari, etc.) */
 ::-webkit-scrollbar {
-    width: 13px;
+    width: 14px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -26,3 +30,15 @@ body{
 }
 
 /*------------------------------------------------*/
+
+#About {
+    scroll-margin-top: 200px;
+}
+
+#Services {
+    scroll-margin-top: 200px;
+}
+
+#Home {
+    scroll-margin-top: 100px;
+}
