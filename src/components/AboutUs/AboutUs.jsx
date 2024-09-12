@@ -15,7 +15,7 @@ const AboutUs = () => {
     });
 
     return (
-        <section className="bg-[#161F31] pt-16 pb-12 mb-16" id="About">
+        <section className="bg-[#161F31] pt-16 pb-12" id="About">
             <div className="container mx-auto px-4">
                 <div className="text-center">
                     <div className="relative inline-block">

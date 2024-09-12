@@ -10,14 +10,14 @@ const HeroHeaderSection = () => {
         const video = videoRef.current;
 
         const fadeInVideo = () => {
-            setVideoOpacity(1); // Hacer que el video aparezca gradualmente
+            setVideoOpacity(1);
         };
 
         const playVideo = () => {
             video.src = "/public/Videos.mp4";
-            video.load(); // Cargar el video
-            video.play(); // Reproducir el video
-            setTimeout(fadeInVideo, 1000); // Retrasar la transición de fundido para garantizar que el video se esté reproduciendo
+            video.load();
+            video.play();
+            setTimeout(fadeInVideo, 1000);
         };
 
         if (video) {
@@ -26,7 +26,7 @@ const HeroHeaderSection = () => {
 
         return () => {
             if (video) {
-                video.pause(); // Pausar el video al desmontar el componente
+                video.pause();
             }
         };
     }, []);

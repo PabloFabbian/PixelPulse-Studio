@@ -4,8 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        'slate-700': 'rgba(55, 65, 81, 0.7)',
+        'slate-700': 'rgba(55, 65, 81, 0.6)',
       },
+      screens: {
+        'xs': '480px', // Para dispositivos móviles pequeños
+        'sm': '834px', // Para tablets
+        'md': '1440px', // Para laptops
+        'lg': '2560px', // Para pantallas grandes
+      }
     },
   },
   plugins: [require('flowbite/plugin')],
