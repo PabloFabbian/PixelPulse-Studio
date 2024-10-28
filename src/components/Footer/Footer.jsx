@@ -8,9 +8,9 @@ const Footer = () => {
             <div className="absolute inset-0 bg-[#1F2937] opacity-20 pointer-events-none z-10" />
 
             {/* Upper section with logo, description, and social icons */}
-            <div className="container mx-auto flex flex-col md:flex-row justify-between items-center mb-8 relative z-20">
+            <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center mb-8 relative z-20">
                 {/* Logo and description */}
-                <div className="mb-6 md:mb-0">
+                <div className="mb-6 sm:mb-0">
                     <a href="#" className="flex items-center text-2xl font-semibold mb-4">
                         <img src="/Logo4.png" alt="PixelPulse Studio Logo" className="h-10 mt-0.5 mr-3" />
                         PixelPulse Studio
@@ -38,9 +38,9 @@ const Footer = () => {
             </div>
 
             {/* Navigation links, newsletter subscription, and copyright section */}
-            <div className="container mx-auto flex flex-col md:flex-row justify-between items-center border-t border-gray-700 pt-8 relative z-20">
+            <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center border-t border-gray-700 pt-8 relative z-20">
                 {/* Links */}
-                <div className="flex md:flex-row justify-center md:justify-start gap-4 mb-8 md:mb-0">
+                <div className="flex flex-row justify-center sm:justify-start gap-4 mb-8 sm:mb-0">
                     <a href="#" className="hover:text-slate-300">About</a>
                     <a href="#" className="hover:text-slate-300">Services</a>
                     <a href="#" className="hover:text-slate-300">Portfolio</a>
@@ -49,17 +49,17 @@ const Footer = () => {
                 </div>
 
                 {/* Newsletter subscription */}
-                <div className="text-center md:text-left mb-8 md:mb-0">
+                <div className="text-center sm:text-left mb-8 sm:mb-0">
                     <h4 className="text-lg font-semibold mb-3">Subscribe to our Newsletter</h4>
-                    <form className="flex flex-col md:flex-row items-center md:items-stretch space-y-3 md:space-y-0 md:space-x-3">
+                    <form className="flex flex-col sm:flex-row items-center sm:items-stretch space-y-3 sm:space-y-0 sm:space-x-3">
                         <input
                             type="email"
-                            className="px-4 py-2 text-black rounded-md focus:outline-none"
+                            className="px-4 py-2 text-black rounded-md focus:outline-none bg-slate-300"
                             placeholder="Your email"
                         />
                         <button
                             type="submit"
-                            className="bg-gradient-to-t from-[#050347] to-[#081E87] hover:bg-gradient-to-t hover:from-[#0B0C2A] hover:to-[#060F64] text-white px-6 py-2 rounded-md transition-colors"
+                            className="bg-gradient-to-t from-[#050347] to-[#081E87] hover:bg-gradient-to-t hover:from-[#0B0C2A] hover:to-[#060F64] text-white px-6 py-2 rounded-sm transition-colors"
                         >
                             Subscribe
                         </button>

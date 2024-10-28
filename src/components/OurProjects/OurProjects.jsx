@@ -37,11 +37,11 @@ const Projects = () => {
 
     return (
         <div className="text-center pt-20 text-white" id="Projects">
-            <div className="text-xl mb-6">Projects</div>
-            <h1 className="text-6xl font-bold mb-6">Discover Amazing Design Projects</h1>
-            <div className="text-xl mb-20">Explore our curated collection of outstanding graphic design projects.</div>
-            <div className="container mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-20">
+            <div className="text-xl mb-2 md:mb-6">Projects</div>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">Discover Amazing Design Projects</h1>
+            <div className="text-xl mb-10 md:mb-20">Explore our curated collection of outstanding graphic design projects.</div>
+            <div className="container px-8 md:px-0 mx-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-10 md:gap-20">
                     {groupedProjects.map((group, groupIndex) => (
                         <div key={groupIndex} className="md:col-span-1">
                             {group.map((project, projectIndex) => {
@@ -69,7 +69,7 @@ const Projects = () => {
                                         variants={variants}
                                         transition={{ duration: 0.8, delay: projectIndex * 0.2 }}
                                     >
-                                        <img src={project.image} alt={project.title} className="w-full mb-4 align-center mx-auto" />
+                                        <img src={project.image} alt={project.title} className="md:w-full mb-4 align-center mx-auto" />
                                         <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
                                         <p className="mb-3">{project.description}</p>
                                         <div className="flex flex-wrap gap-2 mb-3">

@@ -1,21 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import './NavBar.css';
+import './navbar.css';
 
 function MoreDropdown() {
     const [showMenu, setShowMenu] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
-    const [buttonActive, setButtonActive] = useState(true); // Estado para manejar la activación del botón
+    const [buttonActive, setButtonActive] = useState(true);
 
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > lastScrollY) {
-                // Scroll hacia abajo
                 setShowMenu(false);
-                setButtonActive(false); // Desactiva el botón
+                setButtonActive(false);
             } else {
-                // Scroll hacia arriba
                 setShowMenu(true);
-                setButtonActive(true); // Activa el botón
+                setButtonActive(true);
             }
             setLastScrollY(window.scrollY);
         };
@@ -58,14 +56,14 @@ function MoreDropdown() {
     ];
 
     return (
-        <div className={`navbar grid grid-cols-4 w-full justify-between p-6 px-16 z-10 transition-transform duration-300 ${showMenu ? 'translate-y-0' : '-translate-y-full'}`}>
+        <div className={`navbar grid grid-cols-4 w-full justify-between p-6 px-4 md:px-6 z-10 transition-transform duration-300 -mt-0.5 ${showMenu ? 'translate-y-0' : '-translate-y-full'}`}>
             {items.map((section, index) => (
                 <div className="item-container space-y-6 space-x-9 sm:mb-4 md:mb-0" key={index}>
                     <h2 className='section-subtitle'>{section.title}</h2>
                     {section.itemList.map((item, itemIndex) => (
                         <ul className='item hover:bg-slate-700 hover:text-cyan-500 transform hover:cursor-pointer p-2 pl-6 rounded-xl' key={itemIndex}>
                             <div className='title-container'>
-                                <img src={item.imageSrc} className='mt-1.5 mr-3 h-4 w-4' alt={item.imageAlt} />
+                                <img src={item.imageSrc} className='mt-1.5 mr-3 h-4 w-4 max-w-full' alt={item.imageAlt} />
                                 <a href={item.link}>{item.imageAlt}</a>
                             </div>
                             <li className='item-text text-slate-400 max-w-xs whitespace-normal text-pretty'>{item.text}</li>
@@ -74,12 +72,12 @@ function MoreDropdown() {
                 </div>
             ))}
             <div className="panel-container mt-4 md:mt-0 flex justify-center items-center h-full ml-10">
-                <div className="panel-image p-8 bg-gray-500 bg-center bg-no-repeat bg-cover rounded-lg bg-blend-multiply hover:cursor-pointer hover:bg-blend-soft-light" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                <div className="panel-image p-8 bg-gray-500 bg-center bg-no-repeat bg-cover rounded-lg bg-blend-multiply hover:cursor-pointer hover:bg-blend-soft-light">
                     <p className="max-w-xl mb-5 font-extrabold leading-tight tracking-tight text-white">Preview the new Flowbite dashboard animations.</p>
                     <button
                         type="button"
                         className={`inline-flex items-center px-2.5 py-1.5 text-xs font-medium text-center text-white border border-white rounded-lg hover:bg-white hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-700 self-start ${!buttonActive ? 'opacity-50 cursor-not-allowed' : ''}`}
-                        disabled={!buttonActive} // Desactiva el botón si no está activo
+                        disabled={!buttonActive}
                     >
                         Get started
                         <svg className="w-3 h-3 ms-2 rtl:rotate-180" aria-hidden="true" fill="none" viewBox="0 0 14 10">

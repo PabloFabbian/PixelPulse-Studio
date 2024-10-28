@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'flowbite-react';
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const fadeInUp = {
@@ -11,18 +11,18 @@ const fadeInUp = {
 const AboutUs = () => {
     const { ref, inView } = useInView({
         triggerOnce: true,
-        threshold: 0.1, // Trigger when 10% of the element is in view
+        threshold: 0.1,
     });
 
     return (
-        <section className="bg-[#161F31] pt-16 pb-12" id="About">
+        <section className="bg-[#161F31] pt-8 md:pt-16 pb-12" id="About">
             <div className="container mx-auto px-4">
                 <div className="text-center">
-                    <div className="relative inline-block">
-                        <h2 className="text-5xl font-bold mb-4 text-white relative z-10">
+                    <div className="relative inline-block mb-1 md:mb-4">
+                        <h2 className="text-4xl md:text-5xl font-bold text-white relative z-10">
                             About PixelPulse Studio
                         </h2>
-                        <div className="absolute inset-[-2%] bg-gradient-to-r from-green-400 to-blue-500 opacity-30 blur-md rounded-full"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-blue-500 opacity-20 blur-md rounded-full"></div>
                     </div>
                     <motion.div
                         className="text-lg mb-6 text-gray-300 mt-6"
@@ -60,7 +60,7 @@ const AboutUs = () => {
                         initial="hidden"
                         animate={inView ? "visible" : "hidden"}
                         variants={fadeInUp}
-                        transition={{ duration: 0.8, delay:0.7 }}
+                        transition={{ duration: 0.8, delay: 0.7 }}
                     >
                         <Button className="inline-block py-1 px-2 mt-4 transition-transform duration-200 transform hover:scale-125 hover:translate-y-[-4px]" gradientMonochrome="success">
                             Join our Newsletter
